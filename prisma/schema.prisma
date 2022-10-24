@@ -1,0 +1,98 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-dart"
+  previewFeatures = ["interactiveTransactions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  NONBINARY
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  name         String
+  password     String
+  imageProfile String?
+  phone        String?
+  gender       Gender   @default(NONBINARY)
+  address      Address?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  groups       Group[]
+  participants Participant[]
+  friends      Friend[]
+}
+
+model Address {
+  id           String   @id @default(uuid())
+  street       String
+  number       String
+  neighborhood String
+  city         String
+  state        String
+  zipCode      String
+  user         User?    @relation(fields: [userId], references: [id])
+  userId       String   @unique
+  group        Group?   @relation(fields: [groupId], references: [id])
+  groupId      String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Friend {
+  id            String      @id @default(uuid())
+  user          User        @relation(fields: [userId], references: [id])
+  userId        String
+  participant   Participant @relation(fields: [participantId], references: [id])
+  participantId String      @unique
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model Participant {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  group     Group    @relation(fields: [groupId], references: [id])
+  groupId   String
+  friend    Friend?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Location {
+  id        String   @id @default(uuid())
+  latitude  String
+  longitude String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  group     Group?   @relation(fields: [groupId], references: [id])
+  groupId   String   @unique
+}
+
+model Group {
+  id             String        @id @default(uuid())
+  name           String
+  imageGroup     String?
+  owner          User          @relation(fields: [ownerId], references: [id])
+  ownerId        String
+  participant    Participant[]
+  drawDate       DateTime
+  suggestedValue Float
+  eventDate      DateTime
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  address        Address?
+  Location       Location?
+}
