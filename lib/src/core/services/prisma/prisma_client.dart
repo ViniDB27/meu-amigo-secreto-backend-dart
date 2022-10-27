@@ -72,7 +72,7 @@ enum UserScalarFieldEnum {
   email,
   name,
   password,
-  imageProfile,
+  photoUrl,
   phone,
   gender,
   createdAt,
@@ -90,7 +90,7 @@ class UserWhereInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -115,7 +115,7 @@ class UserWhereInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFilter> password;
 
-  final _i2.PrismaNullable<StringNullableFilter> imageProfile;
+  final _i2.PrismaNullable<StringNullableFilter> photoUrl;
 
   final _i2.PrismaNullable<StringNullableFilter> phone;
 
@@ -143,7 +143,7 @@ class UserWhereInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -162,7 +162,7 @@ class UserOrderByWithRelationInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -181,7 +181,7 @@ class UserOrderByWithRelationInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<SortOrder> password;
 
-  final _i2.PrismaNullable<SortOrder> imageProfile;
+  final _i2.PrismaNullable<SortOrder> photoUrl;
 
   final _i2.PrismaNullable<SortOrder> phone;
 
@@ -207,7 +207,7 @@ class UserOrderByWithRelationInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -245,7 +245,7 @@ class UserOrderByWithAggregationInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -263,7 +263,7 @@ class UserOrderByWithAggregationInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<SortOrder> password;
 
-  final _i2.PrismaNullable<SortOrder> imageProfile;
+  final _i2.PrismaNullable<SortOrder> photoUrl;
 
   final _i2.PrismaNullable<SortOrder> phone;
 
@@ -286,7 +286,7 @@ class UserOrderByWithAggregationInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -307,7 +307,7 @@ class UserScalarWhereWithAggregatesInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -328,7 +328,7 @@ class UserScalarWhereWithAggregatesInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringWithAggregatesFilter> password;
 
-  final _i2.PrismaNullable<StringNullableWithAggregatesFilter> imageProfile;
+  final _i2.PrismaNullable<StringNullableWithAggregatesFilter> photoUrl;
 
   final _i2.PrismaNullable<StringNullableWithAggregatesFilter> phone;
 
@@ -348,7 +348,7 @@ class UserScalarWhereWithAggregatesInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -1532,7 +1532,7 @@ class UserCreateInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -1551,8 +1551,7 @@ class UserCreateInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -1578,7 +1577,7 @@ class UserCreateInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -1597,7 +1596,7 @@ class UserUncheckedCreateInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -1616,8 +1615,7 @@ class UserUncheckedCreateInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -1646,7 +1644,7 @@ class UserUncheckedCreateInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -1665,7 +1663,7 @@ class UserUpdateInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -1684,8 +1682,7 @@ class UserUpdateInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -1711,7 +1708,7 @@ class UserUpdateInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -1730,7 +1727,7 @@ class UserUncheckedUpdateInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -1749,8 +1746,7 @@ class UserUncheckedUpdateInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -1779,7 +1775,7 @@ class UserUncheckedUpdateInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -1798,7 +1794,7 @@ class UserCreateManyInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -1813,8 +1809,7 @@ class UserCreateManyInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -1831,7 +1826,7 @@ class UserCreateManyInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -1846,7 +1841,7 @@ class UserUpdateManyMutationInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -1861,8 +1856,7 @@ class UserUpdateManyMutationInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -1879,7 +1873,7 @@ class UserUpdateManyMutationInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -1894,7 +1888,7 @@ class UserUncheckedUpdateManyInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -1909,8 +1903,7 @@ class UserUncheckedUpdateManyInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -1927,7 +1920,7 @@ class UserUncheckedUpdateManyInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -3699,7 +3692,7 @@ class UserCountOrderByAggregateInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -3714,7 +3707,7 @@ class UserCountOrderByAggregateInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<SortOrder> password;
 
-  final _i2.PrismaNullable<SortOrder> imageProfile;
+  final _i2.PrismaNullable<SortOrder> photoUrl;
 
   final _i2.PrismaNullable<SortOrder> phone;
 
@@ -3731,7 +3724,7 @@ class UserCountOrderByAggregateInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -3746,7 +3739,7 @@ class UserMaxOrderByAggregateInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -3761,7 +3754,7 @@ class UserMaxOrderByAggregateInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<SortOrder> password;
 
-  final _i2.PrismaNullable<SortOrder> imageProfile;
+  final _i2.PrismaNullable<SortOrder> photoUrl;
 
   final _i2.PrismaNullable<SortOrder> phone;
 
@@ -3778,7 +3771,7 @@ class UserMaxOrderByAggregateInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -3793,7 +3786,7 @@ class UserMinOrderByAggregateInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -3808,7 +3801,7 @@ class UserMinOrderByAggregateInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<SortOrder> password;
 
-  final _i2.PrismaNullable<SortOrder> imageProfile;
+  final _i2.PrismaNullable<SortOrder> photoUrl;
 
   final _i2.PrismaNullable<SortOrder> phone;
 
@@ -3825,7 +3818,7 @@ class UserMinOrderByAggregateInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -8213,7 +8206,7 @@ class UserCreateWithoutAddressInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -8231,8 +8224,7 @@ class UserCreateWithoutAddressInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -8256,7 +8248,7 @@ class UserCreateWithoutAddressInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -8274,7 +8266,7 @@ class UserUncheckedCreateWithoutAddressInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -8292,8 +8284,7 @@ class UserUncheckedCreateWithoutAddressInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -8319,7 +8310,7 @@ class UserUncheckedCreateWithoutAddressInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -8508,7 +8499,7 @@ class UserUpdateWithoutAddressInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -8526,8 +8517,7 @@ class UserUpdateWithoutAddressInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -8551,7 +8541,7 @@ class UserUpdateWithoutAddressInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -8569,7 +8559,7 @@ class UserUncheckedUpdateWithoutAddressInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -8587,8 +8577,7 @@ class UserUncheckedUpdateWithoutAddressInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -8614,7 +8603,7 @@ class UserUncheckedUpdateWithoutAddressInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'createdAt': createdAt,
@@ -8765,7 +8754,7 @@ class UserCreateWithoutFriendsInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -8783,8 +8772,7 @@ class UserCreateWithoutFriendsInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -8808,7 +8796,7 @@ class UserCreateWithoutFriendsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -8826,7 +8814,7 @@ class UserUncheckedCreateWithoutFriendsInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -8844,8 +8832,7 @@ class UserUncheckedCreateWithoutFriendsInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -8871,7 +8858,7 @@ class UserUncheckedCreateWithoutFriendsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -9010,7 +8997,7 @@ class UserUpdateWithoutFriendsInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -9028,8 +9015,7 @@ class UserUpdateWithoutFriendsInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -9053,7 +9039,7 @@ class UserUpdateWithoutFriendsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -9071,7 +9057,7 @@ class UserUncheckedUpdateWithoutFriendsInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -9089,8 +9075,7 @@ class UserUncheckedUpdateWithoutFriendsInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -9116,7 +9101,7 @@ class UserUncheckedUpdateWithoutFriendsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -9218,7 +9203,7 @@ class UserCreateWithoutParticipantsInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -9236,8 +9221,7 @@ class UserCreateWithoutParticipantsInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -9260,7 +9244,7 @@ class UserCreateWithoutParticipantsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -9279,7 +9263,7 @@ class UserUncheckedCreateWithoutParticipantsInput
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -9297,8 +9281,7 @@ class UserUncheckedCreateWithoutParticipantsInput
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -9324,7 +9307,7 @@ class UserUncheckedCreateWithoutParticipantsInput
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -9589,7 +9572,7 @@ class UserUpdateWithoutParticipantsInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -9607,8 +9590,7 @@ class UserUpdateWithoutParticipantsInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -9631,7 +9613,7 @@ class UserUpdateWithoutParticipantsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -9650,7 +9632,7 @@ class UserUncheckedUpdateWithoutParticipantsInput
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -9668,8 +9650,7 @@ class UserUncheckedUpdateWithoutParticipantsInput
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -9695,7 +9676,7 @@ class UserUncheckedUpdateWithoutParticipantsInput
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -10185,7 +10166,7 @@ class UserCreateWithoutGroupsInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -10203,8 +10184,7 @@ class UserCreateWithoutGroupsInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -10228,7 +10208,7 @@ class UserCreateWithoutGroupsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -10246,7 +10226,7 @@ class UserUncheckedCreateWithoutGroupsInput implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -10264,8 +10244,7 @@ class UserUncheckedCreateWithoutGroupsInput implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>>
-      imageProfile;
+  final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> photoUrl;
 
   final _i2.PrismaNullable<_i2.PrismaUnion<String, _i2.PrismaNull>> phone;
 
@@ -10291,7 +10270,7 @@ class UserUncheckedCreateWithoutGroupsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -10653,7 +10632,7 @@ class UserUpdateWithoutGroupsInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -10671,8 +10650,7 @@ class UserUpdateWithoutGroupsInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -10696,7 +10674,7 @@ class UserUpdateWithoutGroupsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -10714,7 +10692,7 @@ class UserUncheckedUpdateWithoutGroupsInput implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.address,
@@ -10732,8 +10710,7 @@ class UserUncheckedUpdateWithoutGroupsInput implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<StringFieldUpdateOperationsInput> password;
 
-  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput>
-      imageProfile;
+  final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> photoUrl;
 
   final _i2.PrismaNullable<NullableStringFieldUpdateOperationsInput> phone;
 
@@ -10759,7 +10736,7 @@ class UserUncheckedUpdateWithoutGroupsInput implements _i2.JsonSerializable {
       'email': email,
       'name': name,
       'password': password,
-      'imageProfile': imageProfile,
+      'photoUrl': photoUrl,
       'phone': phone,
       'gender': gender,
       'address': address,
@@ -11630,7 +11607,7 @@ class UserGroupByOutputType implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     required this.gender,
     required this.createdAt,
@@ -11651,7 +11628,7 @@ class UserGroupByOutputType implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<String> imageProfile;
+  final _i2.PrismaNullable<String> photoUrl;
 
   final _i2.PrismaNullable<String> phone;
 
@@ -12131,7 +12108,7 @@ class UserCountAggregateOutputType implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    required this.imageProfile,
+    required this.photoUrl,
     required this.phone,
     required this.gender,
     required this.createdAt,
@@ -12150,7 +12127,7 @@ class UserCountAggregateOutputType implements _i2.JsonSerializable {
 
   final int password;
 
-  final int imageProfile;
+  final int photoUrl;
 
   final int phone;
 
@@ -12178,7 +12155,7 @@ class UserMinAggregateOutputType implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -12196,7 +12173,7 @@ class UserMinAggregateOutputType implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<String> password;
 
-  final _i2.PrismaNullable<String> imageProfile;
+  final _i2.PrismaNullable<String> photoUrl;
 
   final _i2.PrismaNullable<String> phone;
 
@@ -12221,7 +12198,7 @@ class UserMaxAggregateOutputType implements _i2.JsonSerializable {
     this.email,
     this.name,
     this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     this.gender,
     this.createdAt,
@@ -12239,7 +12216,7 @@ class UserMaxAggregateOutputType implements _i2.JsonSerializable {
 
   final _i2.PrismaNullable<String> password;
 
-  final _i2.PrismaNullable<String> imageProfile;
+  final _i2.PrismaNullable<String> photoUrl;
 
   final _i2.PrismaNullable<String> phone;
 
@@ -12908,7 +12885,7 @@ class User implements _i2.JsonSerializable {
     required this.email,
     required this.name,
     required this.password,
-    this.imageProfile,
+    this.photoUrl,
     this.phone,
     required this.gender,
     required this.createdAt,
@@ -12925,7 +12902,7 @@ class User implements _i2.JsonSerializable {
 
   final String password;
 
-  final _i2.PrismaNullable<String> imageProfile;
+  final _i2.PrismaNullable<String> photoUrl;
 
   final _i2.PrismaNullable<String> phone;
 
@@ -16375,7 +16352,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
             },
           },
           {
-            'name': 'imageProfile',
+            'name': 'photoUrl',
             'kind': 'scalar',
             'isList': false,
             'isRequired': false,
@@ -16394,7 +16371,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
             'relationName': null,
             'documentation': null,
             'additionalProperties': {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'kind': 'scalar',
               'isList': false,
               'isRequired': false,
@@ -16759,7 +16736,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'isUpdatedAt': false,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'kind': 'scalar',
               'isList': false,
               'isRequired': false,
@@ -19578,7 +19555,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -19837,7 +19814,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': false,
               'isRequired': false,
@@ -20082,7 +20059,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': false,
               'isRequired': false,
@@ -20353,7 +20330,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -24816,7 +24793,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -25033,7 +25010,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -25275,7 +25252,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -25546,7 +25523,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -25794,7 +25771,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -25975,7 +25952,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -26186,7 +26163,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -32358,7 +32335,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': false,
               'isRequired': false,
@@ -32503,7 +32480,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': false,
               'isRequired': false,
@@ -32648,7 +32625,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': false,
               'isRequired': false,
@@ -46728,7 +46705,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -46930,7 +46907,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -47664,7 +47641,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -47920,7 +47897,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -48670,7 +48647,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -48872,7 +48849,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -49413,7 +49390,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -49669,7 +49646,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -50172,7 +50149,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -50374,7 +50351,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -51292,7 +51269,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -51548,7 +51525,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -53456,7 +53433,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -53658,7 +53635,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -54822,7 +54799,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -55078,7 +55055,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'deprecation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'comment': null,
               'isNullable': true,
               'isRequired': false,
@@ -58111,7 +58088,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'documentation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'isNullable': true,
               'outputType': {
                 'isList': false,
@@ -64109,7 +64086,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'documentation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'isNullable': true,
               'outputType': {
                 'isList': false,
@@ -65305,7 +65282,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'documentation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'isNullable': false,
               'outputType': {
                 'isList': false,
@@ -65441,7 +65418,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'documentation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'isNullable': true,
               'outputType': {
                 'isList': false,
@@ -65564,7 +65541,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
               'documentation': null,
             },
             {
-              'name': 'imageProfile',
+              'name': 'photoUrl',
               'isNullable': true,
               'outputType': {
                 'isList': false,
@@ -67352,7 +67329,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
             'email',
             'name',
             'password',
-            'imageProfile',
+            'photoUrl',
             'phone',
             'gender',
             'createdAt',
@@ -67477,7 +67454,7 @@ final _i4.Document dmmf = _i4.Document.fromJson(<String, dynamic>{
   },
 });
 final String schema = _i5.utf8.decode(_i5.base64.decode(
-    r'Ly8gVGhpcyBpcyB5b3VyIFByaXNtYSBzY2hlbWEgZmlsZSwKLy8gbGVhcm4gbW9yZSBhYm91dCBpdCBpbiB0aGUgZG9jczogaHR0cHM6Ly9wcmlzLmx5L2QvcHJpc21hLXNjaGVtYQoKZ2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgICAgICAgID0gInByaXNtYS1jbGllbnQtZGFydCIKICBwcmV2aWV3RmVhdHVyZXMgPSBbImludGVyYWN0aXZlVHJhbnNhY3Rpb25zIl0KfQoKZGF0YXNvdXJjZSBkYiB7CiAgcHJvdmlkZXIgPSAicG9zdGdyZXNxbCIKICB1cmwgICAgICA9IGVudigiREFUQUJBU0VfVVJMIikKfQoKZW51bSBHZW5kZXIgewogIE1BTEUKICBGRU1BTEUKICBOT05CSU5BUlkKfQoKbW9kZWwgVXNlciB7CiAgaWQgICAgICAgICAgIFN0cmluZyAgIEBpZCBAZGVmYXVsdCh1dWlkKCkpCiAgZW1haWwgICAgICAgIFN0cmluZyAgIEB1bmlxdWUKICBuYW1lICAgICAgICAgU3RyaW5nCiAgcGFzc3dvcmQgICAgIFN0cmluZwogIGltYWdlUHJvZmlsZSBTdHJpbmc/CiAgcGhvbmUgICAgICAgIFN0cmluZz8KICBnZW5kZXIgICAgICAgR2VuZGVyICAgQGRlZmF1bHQoTk9OQklOQVJZKQogIGFkZHJlc3MgICAgICBBZGRyZXNzPwogIGNyZWF0ZWRBdCAgICBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgICAgRGF0ZVRpbWUgQHVwZGF0ZWRBdAoKICBncm91cHMgICAgICAgR3JvdXBbXQogIHBhcnRpY2lwYW50cyBQYXJ0aWNpcGFudFtdCiAgZnJpZW5kcyAgICAgIEZyaWVuZFtdCn0KCm1vZGVsIEFkZHJlc3MgewogIGlkICAgICAgICAgICBTdHJpbmcgICBAaWQgQGRlZmF1bHQodXVpZCgpKQogIHN0cmVldCAgICAgICBTdHJpbmcKICBudW1iZXIgICAgICAgU3RyaW5nCiAgbmVpZ2hib3Job29kIFN0cmluZwogIGNpdHkgICAgICAgICBTdHJpbmcKICBzdGF0ZSAgICAgICAgU3RyaW5nCiAgemlwQ29kZSAgICAgIFN0cmluZwogIHVzZXIgICAgICAgICBVc2VyPyAgICBAcmVsYXRpb24oZmllbGRzOiBbdXNlcklkXSwgcmVmZXJlbmNlczogW2lkXSkKICB1c2VySWQgICAgICAgU3RyaW5nICAgQHVuaXF1ZQogIGdyb3VwICAgICAgICBHcm91cD8gICBAcmVsYXRpb24oZmllbGRzOiBbZ3JvdXBJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgZ3JvdXBJZCAgICAgIFN0cmluZyAgIEB1bmlxdWUKICBjcmVhdGVkQXQgICAgRGF0ZVRpbWUgQGRlZmF1bHQobm93KCkpCiAgdXBkYXRlZEF0ICAgIERhdGVUaW1lIEB1cGRhdGVkQXQKfQoKbW9kZWwgRnJpZW5kIHsKICBpZCAgICAgICAgICAgIFN0cmluZyAgICAgIEBpZCBAZGVmYXVsdCh1dWlkKCkpCiAgdXNlciAgICAgICAgICBVc2VyICAgICAgICBAcmVsYXRpb24oZmllbGRzOiBbdXNlcklkXSwgcmVmZXJlbmNlczogW2lkXSkKICB1c2VySWQgICAgICAgIFN0cmluZwogIHBhcnRpY2lwYW50ICAgUGFydGljaXBhbnQgQHJlbGF0aW9uKGZpZWxkczogW3BhcnRpY2lwYW50SWRdLCByZWZlcmVuY2VzOiBbaWRdKQogIHBhcnRpY2lwYW50SWQgU3RyaW5nICAgICAgQHVuaXF1ZQogIGNyZWF0ZWRBdCAgICAgRGF0ZVRpbWUgICAgQGRlZmF1bHQobm93KCkpCiAgdXBkYXRlZEF0ICAgICBEYXRlVGltZSAgICBAdXBkYXRlZEF0Cn0KCm1vZGVsIFBhcnRpY2lwYW50IHsKICBpZCAgICAgICAgU3RyaW5nICAgQGlkIEBkZWZhdWx0KHV1aWQoKSkKICB1c2VyICAgICAgVXNlciAgICAgQHJlbGF0aW9uKGZpZWxkczogW3VzZXJJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgdXNlcklkICAgIFN0cmluZwogIGdyb3VwICAgICBHcm91cCAgICBAcmVsYXRpb24oZmllbGRzOiBbZ3JvdXBJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgZ3JvdXBJZCAgIFN0cmluZwogIGZyaWVuZCAgICBGcmllbmQ/CiAgY3JlYXRlZEF0IERhdGVUaW1lIEBkZWZhdWx0KG5vdygpKQogIHVwZGF0ZWRBdCBEYXRlVGltZSBAdXBkYXRlZEF0Cn0KCm1vZGVsIExvY2F0aW9uIHsKICBpZCAgICAgICAgU3RyaW5nICAgQGlkIEBkZWZhdWx0KHV1aWQoKSkKICBsYXRpdHVkZSAgU3RyaW5nCiAgbG9uZ2l0dWRlIFN0cmluZwogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgRGF0ZVRpbWUgQHVwZGF0ZWRBdAogIGdyb3VwICAgICBHcm91cD8gICBAcmVsYXRpb24oZmllbGRzOiBbZ3JvdXBJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgZ3JvdXBJZCAgIFN0cmluZyAgIEB1bmlxdWUKfQoKbW9kZWwgR3JvdXAgewogIGlkICAgICAgICAgICAgIFN0cmluZyAgICAgICAgQGlkIEBkZWZhdWx0KHV1aWQoKSkKICBuYW1lICAgICAgICAgICBTdHJpbmcKICBpbWFnZUdyb3VwICAgICBTdHJpbmc/CiAgb3duZXIgICAgICAgICAgVXNlciAgICAgICAgICBAcmVsYXRpb24oZmllbGRzOiBbb3duZXJJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgb3duZXJJZCAgICAgICAgU3RyaW5nCiAgcGFydGljaXBhbnQgICAgUGFydGljaXBhbnRbXQogIGRyYXdEYXRlICAgICAgIERhdGVUaW1lCiAgc3VnZ2VzdGVkVmFsdWUgRmxvYXQKICBldmVudERhdGUgICAgICBEYXRlVGltZQogIGNyZWF0ZWRBdCAgICAgIERhdGVUaW1lICAgICAgQGRlZmF1bHQobm93KCkpCiAgdXBkYXRlZEF0ICAgICAgRGF0ZVRpbWUgICAgICBAdXBkYXRlZEF0CiAgYWRkcmVzcyAgICAgICAgQWRkcmVzcz8KICBMb2NhdGlvbiAgICAgICBMb2NhdGlvbj8KfQo='));
+    r'Ly8gVGhpcyBpcyB5b3VyIFByaXNtYSBzY2hlbWEgZmlsZSwKLy8gbGVhcm4gbW9yZSBhYm91dCBpdCBpbiB0aGUgZG9jczogaHR0cHM6Ly9wcmlzLmx5L2QvcHJpc21hLXNjaGVtYQoKZ2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgICAgICAgID0gInByaXNtYS1jbGllbnQtZGFydCIKICBwcmV2aWV3RmVhdHVyZXMgPSBbImludGVyYWN0aXZlVHJhbnNhY3Rpb25zIl0KfQoKZGF0YXNvdXJjZSBkYiB7CiAgcHJvdmlkZXIgPSAicG9zdGdyZXNxbCIKICB1cmwgICAgICA9IGVudigiREFUQUJBU0VfVVJMIikKfQoKZW51bSBHZW5kZXIgewogIE1BTEUKICBGRU1BTEUKICBOT05CSU5BUlkKfQoKbW9kZWwgVXNlciB7CiAgaWQgICAgICAgIFN0cmluZyAgIEBpZCBAZGVmYXVsdCh1dWlkKCkpCiAgZW1haWwgICAgIFN0cmluZyAgIEB1bmlxdWUKICBuYW1lICAgICAgU3RyaW5nCiAgcGFzc3dvcmQgIFN0cmluZwogIHBob3RvVXJsICBTdHJpbmc/CiAgcGhvbmUgICAgIFN0cmluZz8KICBnZW5kZXIgICAgR2VuZGVyICAgQGRlZmF1bHQoTk9OQklOQVJZKQogIGFkZHJlc3MgICBBZGRyZXNzPwogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgRGF0ZVRpbWUgQHVwZGF0ZWRBdAoKICBncm91cHMgICAgICAgR3JvdXBbXQogIHBhcnRpY2lwYW50cyBQYXJ0aWNpcGFudFtdCiAgZnJpZW5kcyAgICAgIEZyaWVuZFtdCn0KCm1vZGVsIEFkZHJlc3MgewogIGlkICAgICAgICAgICBTdHJpbmcgICBAaWQgQGRlZmF1bHQodXVpZCgpKQogIHN0cmVldCAgICAgICBTdHJpbmcKICBudW1iZXIgICAgICAgU3RyaW5nCiAgbmVpZ2hib3Job29kIFN0cmluZwogIGNpdHkgICAgICAgICBTdHJpbmcKICBzdGF0ZSAgICAgICAgU3RyaW5nCiAgemlwQ29kZSAgICAgIFN0cmluZwogIHVzZXIgICAgICAgICBVc2VyPyAgICBAcmVsYXRpb24oZmllbGRzOiBbdXNlcklkXSwgcmVmZXJlbmNlczogW2lkXSkKICB1c2VySWQgICAgICAgU3RyaW5nICAgQHVuaXF1ZQogIGdyb3VwICAgICAgICBHcm91cD8gICBAcmVsYXRpb24oZmllbGRzOiBbZ3JvdXBJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgZ3JvdXBJZCAgICAgIFN0cmluZyAgIEB1bmlxdWUKICBjcmVhdGVkQXQgICAgRGF0ZVRpbWUgQGRlZmF1bHQobm93KCkpCiAgdXBkYXRlZEF0ICAgIERhdGVUaW1lIEB1cGRhdGVkQXQKfQoKbW9kZWwgRnJpZW5kIHsKICBpZCAgICAgICAgICAgIFN0cmluZyAgICAgIEBpZCBAZGVmYXVsdCh1dWlkKCkpCiAgdXNlciAgICAgICAgICBVc2VyICAgICAgICBAcmVsYXRpb24oZmllbGRzOiBbdXNlcklkXSwgcmVmZXJlbmNlczogW2lkXSkKICB1c2VySWQgICAgICAgIFN0cmluZwogIHBhcnRpY2lwYW50ICAgUGFydGljaXBhbnQgQHJlbGF0aW9uKGZpZWxkczogW3BhcnRpY2lwYW50SWRdLCByZWZlcmVuY2VzOiBbaWRdKQogIHBhcnRpY2lwYW50SWQgU3RyaW5nICAgICAgQHVuaXF1ZQogIGNyZWF0ZWRBdCAgICAgRGF0ZVRpbWUgICAgQGRlZmF1bHQobm93KCkpCiAgdXBkYXRlZEF0ICAgICBEYXRlVGltZSAgICBAdXBkYXRlZEF0Cn0KCm1vZGVsIFBhcnRpY2lwYW50IHsKICBpZCAgICAgICAgU3RyaW5nICAgQGlkIEBkZWZhdWx0KHV1aWQoKSkKICB1c2VyICAgICAgVXNlciAgICAgQHJlbGF0aW9uKGZpZWxkczogW3VzZXJJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgdXNlcklkICAgIFN0cmluZwogIGdyb3VwICAgICBHcm91cCAgICBAcmVsYXRpb24oZmllbGRzOiBbZ3JvdXBJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgZ3JvdXBJZCAgIFN0cmluZwogIGZyaWVuZCAgICBGcmllbmQ/CiAgY3JlYXRlZEF0IERhdGVUaW1lIEBkZWZhdWx0KG5vdygpKQogIHVwZGF0ZWRBdCBEYXRlVGltZSBAdXBkYXRlZEF0Cn0KCm1vZGVsIExvY2F0aW9uIHsKICBpZCAgICAgICAgU3RyaW5nICAgQGlkIEBkZWZhdWx0KHV1aWQoKSkKICBsYXRpdHVkZSAgU3RyaW5nCiAgbG9uZ2l0dWRlIFN0cmluZwogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgRGF0ZVRpbWUgQHVwZGF0ZWRBdAogIGdyb3VwICAgICBHcm91cD8gICBAcmVsYXRpb24oZmllbGRzOiBbZ3JvdXBJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgZ3JvdXBJZCAgIFN0cmluZyAgIEB1bmlxdWUKfQoKbW9kZWwgR3JvdXAgewogIGlkICAgICAgICAgICAgIFN0cmluZyAgICAgICAgQGlkIEBkZWZhdWx0KHV1aWQoKSkKICBuYW1lICAgICAgICAgICBTdHJpbmcKICBpbWFnZUdyb3VwICAgICBTdHJpbmc/CiAgb3duZXIgICAgICAgICAgVXNlciAgICAgICAgICBAcmVsYXRpb24oZmllbGRzOiBbb3duZXJJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCiAgb3duZXJJZCAgICAgICAgU3RyaW5nCiAgcGFydGljaXBhbnQgICAgUGFydGljaXBhbnRbXQogIGRyYXdEYXRlICAgICAgIERhdGVUaW1lCiAgc3VnZ2VzdGVkVmFsdWUgRmxvYXQKICBldmVudERhdGUgICAgICBEYXRlVGltZQogIGNyZWF0ZWRBdCAgICAgIERhdGVUaW1lICAgICAgQGRlZmF1bHQobm93KCkpCiAgdXBkYXRlZEF0ICAgICAgRGF0ZVRpbWUgICAgICBAdXBkYXRlZEF0CiAgYWRkcmVzcyAgICAgICAgQWRkcmVzcz8KICBMb2NhdGlvbiAgICAgICBMb2NhdGlvbj8KfQo='));
 const String _executable =
     r'/Users/vinicio/Documents/projetos/meu amigo secreto/backend/.dart_tool/prisma/query-engine';
 

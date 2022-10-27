@@ -1,6 +1,7 @@
+import 'package:shelf/shelf.dart';
 import 'package:shelf_modular/shelf_modular.dart';
 
-import './modules/authentication/authentication_module.dart';
+import 'modules/user/user_module.dart';
 
 class AppModule extends Module {
   @override
@@ -8,6 +9,7 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        Route.module('/authentication', module: AuthenticationModule()),
+        Route.get('/', () => Response.ok('path -> /')),
+        Route.module('/user', module: UserModule()),
       ];
 }

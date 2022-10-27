@@ -42,15 +42,4 @@ void main() {
 
     expect(result, isA<Map<String, dynamic>>());
   });
-  test(
-      'Should AccountDatasourceImpl.signInWithEmailAndPassword throw  AuthenticationException if return user null',
-      () async {
-    when(() => prismaClient.user.findUnique(where: any(named: 'where')))
-        .thenAnswer((_) async => null);
-
-    final result = await datasource.signInWithEmailAndPassword(
-        email: 'teste@teste.com', password: 'any_password');
-
-    expect(result, throwsA(isA<AuthenticationException>()));
-  });
 }

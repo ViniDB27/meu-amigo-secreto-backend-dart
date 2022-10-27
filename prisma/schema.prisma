@@ -18,16 +18,16 @@ enum Gender {
 }
 
 model User {
-  id           String   @id @default(uuid())
-  email        String   @unique
-  name         String
-  password     String
-  imageProfile String?
-  phone        String?
-  gender       Gender   @default(NONBINARY)
-  address      Address?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
+  photoUrl  String?
+  phone     String?
+  gender    Gender   @default(NONBINARY)
+  address   Address?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   groups       Group[]
   participants Participant[]
