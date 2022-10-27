@@ -16,30 +16,44 @@ void main() {
     datasource = AccountDatasourceImpl(prismaClient);
   });
 
-  test(
-      'Should AccountDatasourceImpl.signInWithEmailAndPassword return  Map<String, dynamic> if execute with success ',
-      () async {
-    when(
-      () => prismaClient.user.findUnique(
-        where: UserWhereUniqueInput(
+  group("AccountDatasourceImpl", () {
+    group("signInWithEmailAndPassword", () {
+      test('Should throw  AuthenticationException if execute without success ',
+          () async {
+        when(() => prismaClient.user.findUnique(where: any(named: 'where')))
+            .thenAnswer((_) async => null);
+
+        final result = await datasource.signInWithEmailAndPassword(
           email: 'teste@teste.com',
-        ),
-      ),
-    ).thenAnswer(
-      (_) async => User(
-        id: 'any_id',
-        name: 'any_name',
-        password: 'any_password',
-        email: 'teste@teste.com',
-        gender: Gender.MALE,
-        createdAt: DateTime.now(),
-        updatedAt: DateTime.now(),
-      ),
-    );
+          password: 'any_password',
+        );
 
-    final result = await datasource.signInWithEmailAndPassword(
-        email: 'teste@teste.com', password: 'any_password');
+        expect(result, throwsA(isA<AuthenticationException>()));
+      });
 
-    expect(result, isA<Map<String, dynamic>>());
+      test('Should return  Map<String, dynamic> if execute with success ',
+          () async {
+        when(
+          () => prismaClient.user.findUnique(where: any(named: 'where')),
+        ).thenAnswer(
+          (_) async => User(
+            id: 'any_id',
+            name: 'any_name',
+            password: 'any_password',
+            email: 'teste@teste.com',
+            gender: Gender.MALE,
+            createdAt: DateTime.now(),
+            updatedAt: DateTime.now(),
+          ),
+        );
+
+        final result = await datasource.signInWithEmailAndPassword(
+          email: 'teste@teste.com',
+          password: 'any_password',
+        );
+
+        expect(result, isA<Map<String, dynamic>>());
+      });
+    });
   });
 }

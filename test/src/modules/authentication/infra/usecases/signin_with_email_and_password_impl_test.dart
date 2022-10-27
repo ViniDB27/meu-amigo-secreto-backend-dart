@@ -30,29 +30,34 @@ void main() {
     refreshToken: "refreshToken",
   );
 
-  test('Shoul SignInWithEmailAndPasswordImpl return AccountEntity if execute with success', () async {
-    when(
-      () => repository.signInWithEmailAndPassword(
-        email: mockParams['email']!,
-        password: mockParams['password']!,
-      ),
-    ).thenAnswer((_) async => mockAccountEntity);
+  group("AuthenticationRepository", () {
+    group("SignInWithEmailAndPasswordImpl", () {
+      test('Should return AccountEntity if execute with success', () async {
+        when(
+          () => repository.signInWithEmailAndPassword(
+            email: mockParams['email']!,
+            password: mockParams['password']!,
+          ),
+        ).thenAnswer((_) async => mockAccountEntity);
 
-    final result = await usecase(mockUsecaseParams);
+        final result = await usecase(mockUsecaseParams);
 
-    expect(result, isA<AccountEntity>());
-  });
+        expect(result, isA<AccountEntity>());
+      });
 
-  test('Shoul SignInWithEmailAndPasswordImpl throws AuthenticationException if execute without success', () async {
-    when(
-      () => repository.signInWithEmailAndPassword(
-        email: mockParams['email']!,
-        password: mockParams['password']!,
-      ),
-    ).thenThrow(AuthenticationException(500, "Erro interno no servidor"));
+      test('Should throws AuthenticationException if execute without success',
+          () async {
+        when(
+          () => repository.signInWithEmailAndPassword(
+            email: mockParams['email']!,
+            password: mockParams['password']!,
+          ),
+        ).thenThrow(AuthenticationException(500, "Erro interno no servidor"));
 
-    final result = usecase(mockUsecaseParams);
+        final result = usecase(mockUsecaseParams);
 
-    expect(result, throwsA(isA<AuthenticationException>()));
+        expect(result, throwsA(isA<AuthenticationException>()));
+      });
+    });
   });
 }

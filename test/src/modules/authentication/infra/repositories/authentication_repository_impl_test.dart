@@ -16,7 +16,6 @@ class AccountDatasourceSpy extends Mock implements AccountDatasource {}
 
 void main() {
   late AuthenticationRepository repository;
-
   late BCryptService bcrypt;
   late JwtService jwt;
   late AccountDatasource datasource;
@@ -38,68 +37,96 @@ void main() {
     'password': '123456'
   };
 
-  group("signInWithEmailAndPassword", () {
-    test(
-        'Should AuthenticationRepositoryImpl.signInWithEmailAndPassword return AccountEntity if execute with success',
-        () async {
-      when(
-        () =>
-            bcrypt.checkHash(mockParams['password']!, mockParams['password']!),
-      ).thenAnswer((_) => true);
+  group("AuthenticationRepositoryImpl", () {
+    group("signInWithEmailAndPassword", () {
+      test(
+          'Should signInWithEmailAndPassword throw AuthenticationException if bcrypt.checkHash return false',
+          () async {
+        when(() => bcrypt.checkHash(
+                mockParams['password']!, mockParams['password']!))
+            .thenReturn(false);
 
-      when(
-        () => jwt.generateToken(mockParams, 'accessToken'),
-      ).thenAnswer((_) => "accessToken");
+        when(
+          () => jwt.generateToken(mockParams, 'accessToken'),
+        ).thenAnswer((_) => "accessToken");
 
-      when(
-        () => jwt.generateToken(mockParams, 'refreshToken'),
-      ).thenAnswer((_) => "refreshToken");
+        when(
+          () => jwt.generateToken(mockParams, 'refreshToken'),
+        ).thenAnswer((_) => "refreshToken");
 
-      when(
-        () => datasource.signInWithEmailAndPassword(
+        when(
+          () => datasource.signInWithEmailAndPassword(
+            email: mockParams['email']!,
+            password: mockParams['password']!,
+          ),
+        ).thenAnswer((_) async => mockParams);
+
+        final result = repository.signInWithEmailAndPassword(
           email: mockParams['email']!,
           password: mockParams['password']!,
-        ),
-      ).thenAnswer((_) async => mockParams);
+        );
 
-      final result = await repository.signInWithEmailAndPassword(
-        email: mockParams['email']!,
-        password: mockParams['password']!,
-      );
+        expect(result, throwsA(isA<AuthenticationException>()));
+      });
 
-      expect(result, isA<AccountEntity>());
-    });
+      test(
+          'Should signInWithEmailAndPassword throw AuthenticationException if execute without success',
+          () async {
+        when(() => bcrypt.checkHash(
+            mockParams['password']!, mockParams['password']!)).thenReturn(true);
 
-    test(
-        'Should AuthenticationRepositoryImpl.signInWithEmailAndPassword throw AuthenticationException if bcrypt.checkHash return false',
-        () async {
+        when(
+          () => jwt.generateToken(mockParams, 'accessToken'),
+        ).thenAnswer((_) => "accessToken");
 
-      when(
-        () =>
-            bcrypt.checkHash(mockParams['password']!, mockParams['password']!),
-      ).thenAnswer((_) => false);
+        when(
+          () => jwt.generateToken(mockParams, 'refreshToken'),
+        ).thenAnswer((_) => "refreshToken");
 
-      when(
-        () => jwt.generateToken(mockParams, 'accessToken'),
-      ).thenAnswer((_) => "accessToken");
+        when(
+          () => datasource.signInWithEmailAndPassword(
+            email: mockParams['email']!,
+            password: mockParams['password']!,
+          ),
+        ).thenThrow(AuthenticationException(500, "Erro interno no servidor"));
+        ;
 
-      when(
-        () => jwt.generateToken(mockParams, 'refreshToken'),
-      ).thenAnswer((_) => "refreshToken");
-
-      when(
-        () => datasource.signInWithEmailAndPassword(
+        final result = repository.signInWithEmailAndPassword(
           email: mockParams['email']!,
           password: mockParams['password']!,
-        ),
-      ).thenAnswer((_) async => mockParams);
+        );
 
-      final result = repository.signInWithEmailAndPassword(
-        email: mockParams['email']!,
-        password: mockParams['password']!,
-      );
+        expect(result, throwsA(isA<AuthenticationException>()));
+      });
 
-      expect(result, throwsA(isA<AuthenticationException>()));
+      test(
+          'Should signInWithEmailAndPassword return AccountEntity if execute with success',
+          () async {
+        when(() => bcrypt.checkHash(
+            mockParams['password']!, mockParams['password']!)).thenReturn(true);
+
+        when(
+          () => jwt.generateToken(mockParams, 'accessToken'),
+        ).thenAnswer((_) => "accessToken");
+
+        when(
+          () => jwt.generateToken(mockParams, 'refreshToken'),
+        ).thenAnswer((_) => "refreshToken");
+
+        when(
+          () => datasource.signInWithEmailAndPassword(
+            email: mockParams['email']!,
+            password: mockParams['password']!,
+          ),
+        ).thenAnswer((_) async => mockParams);
+
+        final result = await repository.signInWithEmailAndPassword(
+          email: mockParams['email']!,
+          password: mockParams['password']!,
+        );
+
+        expect(result, isA<AccountEntity>());
+      });
     });
   });
 }

@@ -11,97 +11,93 @@ void main() {
     validate = UserValidateImpl();
   });
 
-  group("UserValidateImpl.validateRequestBody", () {
-    test('Should validateRequestBody throw UserException if email is empty.',
-        () async {
-      final body = {
-        "name": "test",
-        "email": "",
-        "password": "123456",
-        "gender": "MALE"
-      };
+  group("UserValidateImpl", () {
+    group("validateRequestBody", () {
+      test('Should throw UserException if email is empty.', () async {
+        final body = {
+          "name": "test",
+          "email": "",
+          "password": "123456",
+          "gender": "MALE"
+        };
 
-      expect(() => validate.validateRequestBody(body),
-          throwsA(isA<UserException>()));
-    });
+        expect(() => validate.validateRequestBody(body),
+            throwsA(isA<UserException>()));
+      });
 
-    test('Should validateRequestBody throw UserException if email is invalid.',
-        () async {
-      final body = {
-        "name": "test",
-        "email": "teste",
-        "password": "123456",
-        "gender": "MALE"
-      };
+      test('Should throw UserException if email is invalid.', () async {
+        final body = {
+          "name": "test",
+          "email": "teste",
+          "password": "123456",
+          "gender": "MALE"
+        };
 
-      expect(() => validate.validateRequestBody(body),
-          throwsA(isA<UserException>()));
-    });
+        expect(() => validate.validateRequestBody(body),
+            throwsA(isA<UserException>()));
+      });
 
-    test('Should validateRequestBody throw UserException if name is empty.',
-        () async {
-      final body = {
-        "name": "",
-        "email": "teste@teste.com",
-        "password": "123456",
-        "gender": "MALE"
-      };
+      test('Should throw UserException if name is empty.', () async {
+        final body = {
+          "name": "",
+          "email": "teste@teste.com",
+          "password": "123456",
+          "gender": "MALE"
+        };
 
-      expect(() => validate.validateRequestBody(body),
-          throwsA(isA<UserException>()));
-    });
+        expect(() => validate.validateRequestBody(body),
+            throwsA(isA<UserException>()));
+      });
 
-    test('Should validateRequestBody throw UserException if password is empty.',
-        () async {
-      final body = {
-        "name": "test",
-        "email": "teste@teste.com",
-        "password": "",
-        "gender": "MALE"
-      };
+      test('Should throw UserException if password is empty.', () async {
+        final body = {
+          "name": "test",
+          "email": "teste@teste.com",
+          "password": "",
+          "gender": "MALE"
+        };
 
-      expect(() => validate.validateRequestBody(body),
-          throwsA(isA<UserException>()));
-    });
+        expect(() => validate.validateRequestBody(body),
+            throwsA(isA<UserException>()));
+      });
 
-    test('Should validateRequestBody throw UserException if gender is empty.',
-        () async {
-      final body = {
-        "name": "test",
-        "email": "teste@teste.com",
-        "password": "123456",
-        "gender": ""
-      };
+      test('Should throw UserException if gender is empty.', () async {
+        final body = {
+          "name": "test",
+          "email": "teste@teste.com",
+          "password": "123456",
+          "gender": ""
+        };
 
-      expect(() => validate.validateRequestBody(body),
-          throwsA(isA<UserException>()));
-    });
+        expect(() => validate.validateRequestBody(body),
+            throwsA(isA<UserException>()));
+      });
 
-    test('Should validateRequestBody throw UserException if gender is invalid.',
-        () async {
-      final body = {
-        "name": "test",
-        "email": "teste@teste.com",
-        "password": "123456",
-        "gender": "outracois"
-      };
+      test('Should throw UserException if gender is invalid.', () async {
+        final body = {
+          "name": "test",
+          "email": "teste@teste.com",
+          "password": "123456",
+          "gender": "outracois"
+        };
 
-      expect(() => validate.validateRequestBody(body),
-          throwsA(isA<UserException>()));
-    });
+        expect(() => validate.validateRequestBody(body),
+            throwsA(isA<UserException>()));
+      });
 
-    test('Should validateRequestBody return CreateNewUserParas if execute with success.',
-        () async {
-      final body = {
-        "name": "test",
-        "email":  "teste@teste.com",
-        "password": "123456",
-        "gender": "MALE"
-      };
+      test('Should return CreateNewUserParas if execute with success.',
+          () async {
+        final body = {
+          "name": "test",
+          "email": "teste@teste.com",
+          "password": "123456",
+          "gender": "MALE"
+        };
 
-      final result = validate.validateRequestBody(body);
+        final result = validate.validateRequestBody(body);
 
-      expect(result, isA<CreateNewUserParas>());
+        expect(result, isA<CreateNewUserParams>());
+      });
     });
   });
 }

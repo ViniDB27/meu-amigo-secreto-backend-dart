@@ -43,37 +43,41 @@ void main() {
     refreshToken: "refreshToken",
   );
 
-  test(
-      'Should AuthenticationControllerImpl return Response with status code equal 200 if execute with success',
-      () async {
-    when(() => arguments.data).thenAnswer((_) => mockArgumentsData);
+  group("AuthenticationControllerImpl", () {
+    group("signInWithEmailAndPassword", () {
+      test(
+          'Should return Response with status code equal 200 if execute with success',
+          () async {
+        when(() => arguments.data).thenAnswer((_) => mockArgumentsData);
 
-    when(() => validate.validateRequestBody(mockArgumentsData))
-        .thenAnswer((_) => mockUsecaseParams);
+        when(() => validate.validateRequestBody(mockArgumentsData))
+            .thenAnswer((_) => mockUsecaseParams);
 
-    when(() => usecase(mockUsecaseParams))
-        .thenAnswer((_) async => mockAccountEntity);
+        when(() => usecase(mockUsecaseParams))
+            .thenAnswer((_) async => mockAccountEntity);
 
-    final result = await controller.signInWithEmailAndPassword(arguments);
+        final result = await controller.signInWithEmailAndPassword(arguments);
 
-    expect(result, isA<Response>());
-    expect(result.statusCode, 200);
-  });
+        expect(result, isA<Response>());
+        expect(result.statusCode, 200);
+      });
 
-  test(
-      'Should AuthenticationControllerImpl return Response with status code not equal 200 if execute without success',
-      () async {
-    when(() => arguments.data).thenAnswer((_) => mockArgumentsData);
+      test(
+          'Should return Response with status code not equal 200 if execute without success',
+          () async {
+        when(() => arguments.data).thenAnswer((_) => mockArgumentsData);
 
-    when(() => validate.validateRequestBody(mockArgumentsData))
-        .thenAnswer((_) => mockUsecaseParams);
+        when(() => validate.validateRequestBody(mockArgumentsData))
+            .thenAnswer((_) => mockUsecaseParams);
 
-    when(() => usecase(mockUsecaseParams))
-        .thenThrow(AuthenticationException(500, "Erro interno do servidor"));
+        when(() => usecase(mockUsecaseParams)).thenThrow(
+            AuthenticationException(500, "Erro interno do servidor"));
 
-    final result = await controller.signInWithEmailAndPassword(arguments);
+        final result = await controller.signInWithEmailAndPassword(arguments);
 
-    expect(result, isA<Response>());
-    expect(result.statusCode, isNot(200));
+        expect(result, isA<Response>());
+        expect(result.statusCode, isNot(200));
+      });
+    });
   });
 }

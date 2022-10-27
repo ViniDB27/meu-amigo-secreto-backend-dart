@@ -1,16 +1,16 @@
 import '../entities/user_entity.dart';
 
 abstract class CreateNewUser {
-  Future<UserEntity> call(CreateNewUserParas params);
+  Future<UserEntity> call(CreateNewUserParams params);
 }
 
-class CreateNewUserParas {
+class CreateNewUserParams {
   final String name;
   final String email;
   final String password;
   final String gender;
 
-  CreateNewUserParas({
+  CreateNewUserParams({
     required this.name,
     required this.email,
     required this.password,

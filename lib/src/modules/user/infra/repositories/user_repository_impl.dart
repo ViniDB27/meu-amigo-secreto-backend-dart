@@ -11,7 +11,7 @@ class UserRepositoryImpl extends UserRepository {
   UserRepositoryImpl(this.datasource);
 
   @override
-  Future<UserEntity> createNewUser(CreateNewUserParas params) async {
+  Future<UserEntity> createNewUser(CreateNewUserParams params) async {
     final userMap = await datasource.createNewUser(params);
 
     return UserModel.fromJson(userMap).toEntity;

@@ -7,7 +7,7 @@ class CreateNewUserImpl extends CreateNewUser {
 
   CreateNewUserImpl(this.repository);
 
-  Future<UserEntity> call(CreateNewUserParas params) async {
+  Future<UserEntity> call(CreateNewUserParams params) async {
     return repository.createNewUser(params);
   }
 }

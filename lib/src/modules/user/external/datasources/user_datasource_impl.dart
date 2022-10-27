@@ -15,7 +15,7 @@ class UserDatasourceImpl extends UserDatasource {
   });
 
   @override
-  Future<Map<String, dynamic>> createNewUser(CreateNewUserParas params) async {
+  Future<Map<String, dynamic>> createNewUser(CreateNewUserParams params) async {
     try {
       final gender = Gender.values
           .firstWhere((e) => e.toString() == "Gender.${params.gender}");

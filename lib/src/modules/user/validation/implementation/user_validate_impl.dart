@@ -6,7 +6,7 @@ import '../user_validate.dart';
 
 class UserValidateImpl extends UserValidate {
   @override
-  CreateNewUserParas validateRequestBody(dynamic body) {
+  CreateNewUserParams validateRequestBody(dynamic body) {
     if (body['email'].toString().isEmpty) {
       throw UserException(400, 'Email is required');
     }
@@ -33,7 +33,7 @@ class UserValidateImpl extends UserValidate {
       throw UserException(400, 'Gender is invalid, use Values [MALE, FEMALE,  NONBINARY]');
     }
 
-    return CreateNewUserParas(
+    return CreateNewUserParams(
       name: body['name'],
       email: body['email'],
       password: body['password'],
