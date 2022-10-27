@@ -20,4 +20,13 @@ class UserEntity {
     this.photoUrl,
     this.phone,
   });
+
+  Map<String, dynamic> get toJson => {
+        'id': id,
+        'name': name,
+        'email': email,
+        'photoUrl': photoUrl,
+        'phone': phone,
+        'gender': gender.toString().replaceAll("Gender.", ""),
+      };
 }

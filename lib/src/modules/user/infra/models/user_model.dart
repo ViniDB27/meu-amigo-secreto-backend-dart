@@ -30,7 +30,7 @@ class UserModel {
         id: json['id'],
         name: json['name'],
         email: json['email'],
-        gender: json['gender'],
+        gender:  Gender.values.firstWhere((element) => element.toString() == "Gender.${json['gender']}"),
         photoUrl: json['photoUrl'],
         phone: json['phone'],
       );

@@ -1,5 +1,7 @@
 import 'package:shelf_modular/shelf_modular.dart';
 
+import '../../core/services/bcrypt/bcrypt_service.dart';
+import '../../core/services/bcrypt/bcrypt_service_impl.dart';
 import 'presentation/controllers/implementation/authentication_controller_impl.dart';
 import 'external/datasources/user_datasource_impl.dart';
 import 'presentation/controllers/user_controller.dart';
@@ -16,21 +18,24 @@ import 'validation/user_validate.dart';
 class UserModule extends Module {
   @override
   List<Bind> get binds => [
+        //services
         Bind.instance<PrismaClient>(PrismaClient()),
+        Bind.instance<BCryptService>(BCryptServiceImpl()),
 
-        //datasource
-        Bind.factory<UserDatasource>((i) => UserDatasourceImpl(i())),
+        //datasources
+        Bind.factory<UserDatasource>(
+            (i) => UserDatasourceImpl(bcrypt: i(), prisma: i())),
 
-        //repository
+        //repositories
         Bind.factory<UserRepository>((i) => UserRepositoryImpl(i())),
 
-        //usecase
+        //usecases
         Bind.factory<CreateNewUser>((i) => CreateNewUserImpl(i())),
 
-        // validate
+        // validates
         Bind.factory<UserValidate>((i) => UserValidateImpl()),
 
-        // controller
+        // controllers
         Bind.factory<UserController>(
             (i) => UserControllerImpl(usecase: i(), validate: i())),
       ];

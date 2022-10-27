@@ -26,7 +26,7 @@ class UserControllerImpl extends UserController {
 
       final user = await usecase(params);
 
-      return Response.ok(jsonEncode(user));
+      return Response.ok(jsonEncode(user.toJson));
     } on UserException catch (e) {
       return Response(
         e.statusCode,
